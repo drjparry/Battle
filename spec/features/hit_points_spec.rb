@@ -14,7 +14,7 @@ feature "User Story => Battle" do
   scenario "allows user to see player 2's hitpoints" do
     # firefox
     sign_in_and_play
-    expect(page).to have_content("Barry: 60/60 HP")
+    expect(page).to have_content("Barry: 60 HP")
   end
 
 # As Player 1,
