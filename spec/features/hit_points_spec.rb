@@ -23,8 +23,8 @@ feature "User Story => Battle" do
 
   scenario 'allow user to see confirmation of attack' do
     sign_in_and_play
-    click_button('Attack')
-    expect(page).to have_content("Barry: 50/60 HP")
+    click_link('Attack')
+    expect(page).to have_content("Dave attacked Barry")
   end
 
 end

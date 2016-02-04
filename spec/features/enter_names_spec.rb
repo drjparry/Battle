@@ -13,6 +13,6 @@ feature "User Story => Battle" do
   # We want to Start a fight by entering our names and seeing them
   scenario "allow players entering their names" do
     sign_in_and_play
-    expect(page).to have_content("David vs. Barry")
+    expect(page).to have_content("Dave vs. Barry")
   end
 end

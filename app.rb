@@ -24,10 +24,7 @@ class Battle < Sinatra::Base
   get '/attack' do
   @player1 = session[:player1]
   @player2 = session[:player2]
-  @player2hp = session[:hitpoints]
-  @player2hp -= 10
-  session[:hitpoints] = @player2hp
-  erb :play
+  erb :attack
   end
 
 
