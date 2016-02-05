@@ -64,5 +64,18 @@ feature "User Story => Battle" do
     expect(page).to have_content("Dave: 50 HP")
 
   end
+# As a Player,
+# So I can Lose a game of Battle,
+# I want to see a 'Lose' message if I reach 0HP first
+
+  scenario 'allows a player to lose if hitpoints = 0 ' do
+   sign_in_and_play
+   11.times do
+    click_link('Attack')
+    click_link('Switch Turn')
+    end
+    expect(page).to have_content("Dave Wins!")
+  end
+
 
 end

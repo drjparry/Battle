@@ -1,3 +1,10 @@
+<% if @game.hit_points2 == 0 %>
+
+   <%= @game.name1%> Wins!
+<% else %>
+
+
+
 <h2> Current Turn: <%= @game.current.name %>
 
 <p>
@@ -12,3 +19,6 @@
 <p>
   <%= @game.name1 %>: <%= @game.hit_points1%> HP
 </p>
+
+
+  <% end %>

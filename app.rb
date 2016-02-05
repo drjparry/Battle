@@ -19,7 +19,7 @@ class Battle < Sinatra::Base
     @game = $game
     erb :play
   end
-  
+
   get '/continue_play' do
     @game = $game
     @game.switch_turns
