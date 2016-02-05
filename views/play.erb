@@ -1,9 +1,9 @@
+<h2> Current Turn: <%= @game.current.name %>
+
 <p>
   <%= @game.name1 %> vs. <%= @game.name2 %>
 </p>
-<!-- <form action='/attack'>
-<input type="submit"value="Attack">
-  </form> -->
+
 <a href="/attack">Attack</a>
 <p>
   <%= @game.name2 %>: <%= @game.hit_points2%> HP

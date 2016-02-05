@@ -1,6 +1,8 @@
 require 'forwardable'
 
 class Game
+  
+  attr_reader :current, :opponent
 
   extend Forwardable
 
@@ -13,10 +15,21 @@ class Game
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
+    @current  = player_1
+    @opponent = player_2
   end
 
   def attack(player)
     player.receive_damage
   end
+  
+  def switch_turns
+    self.current.name == self.player_1.name ? (self.current = player_2) : (self.current = player_1)
+    self.opponent.name == self.player_2.name ? (self.opponent = player_1) : (self.opponent = player_2)
+  end
+  
+  private 
+  
+  attr_writer :current, :opponent
 
 end

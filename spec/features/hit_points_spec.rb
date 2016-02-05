@@ -15,17 +15,17 @@ feature "User Story => Battle" do
   scenario "allows user to see player 2's hitpoints" do
     # firefox
     sign_in_and_play
-    expect(page).to have_content("Barry: 60 HP")
+    expect(page).to have_content("Marco: 60 HP")
   end
 
-# As Player 1,
-# So I can win a game of Battle,
-# I want to attack Player 2, and I want to get a confirmation
+  # As Player 1,
+  # So I can win a game of Battle,
+  # I want to attack Player 2, and I want to get a confirmation
 
   scenario 'allow user to see confirmation of attack' do
     sign_in_and_play
     click_link('Attack')
-    expect(page).to have_content("Dave attacked Barry")
+    expect(page).to have_content("Dave attacked Marco")
   end
 
   # As Player 1,
@@ -35,9 +35,9 @@ feature "User Story => Battle" do
   scenario 'allows an attack to reduce players HP' do
     sign_in_and_play
     click_link('Attack')
-    click_link('Return to play')
-    expect(page).not_to have_content("Barry: 60 HP")
-    expect(page).to have_content("Barry: 50 HP")
+    click_link('Switch Turn')
+    expect(page).not_to have_content("Marco: 60 HP")
+    expect(page).to have_content("Marco: 50 HP")
 
   end
 
